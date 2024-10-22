@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    FILE *file1,File2;
+    char filename[100];
+    char filename2[100];
+    int num, sum = 0;
+
+    scanf("%s", filename);
+    scanf("%s", filename2);
+
+    file1 = fopen(filename, "r");
+    file2 = fopen(filename2, "w");
+    
+    
+    if (file1 == NULL) {
+        printf("Error %s\n", filename);
+        return 1;
+    }
+    
+    if (file2 == NULL) {
+        printf("Error %s\n", filename);
+        return 1;
+    }
+while(fscanf(filename,%d,&num)!=EOF)
+{
+    sum=sum+num;
+}
+
+fprintf(file2,"the output of sum %d\n,num);
+
+fclose(file1);
+fclose(file2);
+  
+return 0;
+}

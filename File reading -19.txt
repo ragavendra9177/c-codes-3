@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+#include <stdio.h>
+
+int main() {
+    FILE *file;
+    char filename[100];
+    int num, sum = 0;
+
+    scanf("%s", filename);
+
+    file = fopen(filename, "r");
+    
+    if (file == NULL) {
+        printf("Error %s\n", filename);
+        return 1;
+    }
+
+    while (fscanf(file, "%d", &num) != EOF) {
+        sum += num;
+    }
+
+    fclose(file);
+    
+    printf("sum of the numbers is %d\n", sum);
+
+    return 0;
+}
